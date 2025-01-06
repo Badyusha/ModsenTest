@@ -3,11 +3,13 @@ package com.modsen.bookstorageservice.controllers;
 import com.modsen.bookstorageservice.repositories.BookRepository;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
 import com.modsen.commonmodels.models.entities.Book;
+import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import javax.crypto.SecretKey;
 import java.util.List;
 
 @RestController
@@ -22,7 +24,6 @@ public class BookController {
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         Book savedBook = bookRepository.save(book);
 
-        // Send bookId to Kafka
         kafkaTemplate.send(KafkaTopic.Constants.CREATION_TOPIC_VALUE, savedBook.getId().toString());
 
         return ResponseEntity.ok(savedBook);
