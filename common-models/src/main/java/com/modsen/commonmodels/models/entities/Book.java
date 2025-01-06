@@ -1,5 +1,6 @@
 package com.modsen.commonmodels.models.entities;
 
+import com.modsen.commonmodels.enums.entityAttributes.CreationStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,4 +32,8 @@ public class Book {
 
     @Column(nullable = false)
     private String author;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private CreationStatus creationStatus;
 }

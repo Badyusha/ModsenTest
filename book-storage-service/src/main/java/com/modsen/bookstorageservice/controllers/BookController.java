@@ -1,6 +1,8 @@
 package com.modsen.bookstorageservice.controllers;
 
 import com.modsen.bookstorageservice.repositories.BookRepository;
+import com.modsen.bookstorageservice.services.BookService;
+import com.modsen.commonmodels.enums.entityAttributes.CreationStatus;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
 import com.modsen.commonmodels.models.entities.Book;
 import io.jsonwebtoken.security.Keys;
@@ -19,9 +21,11 @@ public class BookController {
 
     private final BookRepository bookRepository;
     private final KafkaTemplate<String, String> kafkaTemplate;
+    private final BookService bookService;
 
     @PostMapping
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
+        book.setCreationStatus(CreationStatus.EXISTS);
         Book savedBook = bookRepository.save(book);
 
         kafkaTemplate.send(KafkaTopic.Constants.CREATION_TOPIC_VALUE, savedBook.getId().toString());
@@ -63,11 +67,8 @@ public class BookController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-        if (bookRepository.existsById(id)) {
-            bookRepository.deleteById(id);
-
+        if(bookService.softDeleteBookInfo(id)) {
             kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, id.toString());
-
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();

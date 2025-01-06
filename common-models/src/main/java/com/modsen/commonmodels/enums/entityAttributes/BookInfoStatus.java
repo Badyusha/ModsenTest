@@ -1,6 +1,7 @@
 package com.modsen.commonmodels.enums.entityAttributes;
 
-public enum Status {
+public enum BookInfoStatus {
     AVAILABLE,
-    BORROWED
+    BORROWED,
+    DELETED
 }

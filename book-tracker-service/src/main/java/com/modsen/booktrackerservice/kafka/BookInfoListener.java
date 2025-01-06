@@ -30,10 +30,7 @@ public class BookInfoListener {
     @KafkaListener(topics = KafkaTopic.Constants.DELETION_TOPIC_VALUE, groupId = "book-tracker-service")
     public void listenForDeletion(String bookId) {
         Long bookIdLong = Long.parseLong(bookId);
-
-        if(bookInfoRepository.existsByBookId(bookIdLong)) {
-            bookInfoRepository.deleteByBookId(bookIdLong);
-        }
+        System.out.println(bookInfoService.softDeleteBookInfo(bookIdLong));
     }
 }
 

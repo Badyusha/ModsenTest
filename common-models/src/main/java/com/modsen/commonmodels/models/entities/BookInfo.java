@@ -1,6 +1,6 @@
 package com.modsen.commonmodels.models.entities;
 
-import com.modsen.commonmodels.enums.entityAttributes.Status;
+import com.modsen.commonmodels.enums.entityAttributes.BookInfoStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,9 +32,9 @@ public class BookInfo {
     @Column(name = "book_id")
     private Long bookId;
 
-    @Column(nullable = false)
+    @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private BookInfoStatus bookInfoStatus;
 
     @Column
     private LocalDateTime borrowedAt;
@@ -42,9 +42,9 @@ public class BookInfo {
     @Column
     private LocalDateTime returnDue;
 
-    public BookInfo(Long bookId, Status status, LocalDateTime borrowedAt, LocalDateTime returnDue) {
+    public BookInfo(Long bookId, BookInfoStatus bookInfoStatus, LocalDateTime borrowedAt, LocalDateTime returnDue) {
         this.bookId = bookId;
-        this.status = status;
+        this.bookInfoStatus = bookInfoStatus;
         this.borrowedAt = borrowedAt;
         this.returnDue = returnDue;
     }
