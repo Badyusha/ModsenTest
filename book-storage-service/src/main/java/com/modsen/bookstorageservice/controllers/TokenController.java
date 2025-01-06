@@ -7,14 +7,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/token")
 @RequiredArgsConstructor
-public class AuthController {
+public class TokenController {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(TokenController.class);
     private final TokenService tokenService;
 
-    @GetMapping("/generate-token")
+    @GetMapping("/generate")
     public String getToken(){
         String token = tokenService.generateToken();
         LOGGER.debug("Token granted {}", token);
