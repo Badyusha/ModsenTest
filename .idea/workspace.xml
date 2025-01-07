@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/BookStorageServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/BookStorageServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/kafka/KafkaProducer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/BookTrackerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/BookTrackerServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/BookInfoListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/BookInfoListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/KafkaConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/dtos/BookInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/dtos/BookInfoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/BookInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/BookInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +17,8 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +43,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.BookInfoServiceTest.executor": "Run",
     "Maven.book-storage-service [clean].executor": "Run",
     "Maven.book-storage-service [install].executor": "Run",
     "Maven.modsen [clean].executor": "Run",
@@ -106,7 +95,37 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BookTrackerServiceApplication">
+  <component name="RunManager" selected="JUnit.BookServiceTest">
+    <configuration name="BookInfoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-tracker-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.booktrackerservice.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.booktrackerservice.services" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.booktrackerservice.services.BookInfoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-storage-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.bookstorageservice.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.services" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.services.BookServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookStorageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="book-storage-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.modsen.bookstorageservice.BookStorageServiceApplication" />
@@ -128,6 +147,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BookServiceTest" />
+        <item itemvalue="JUnit.BookInfoServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -147,7 +172,7 @@
       <updated>1736046604242</updated>
       <workItem from="1736046605316" duration="2822000" />
       <workItem from="1736049748997" duration="8369000" />
-      <workItem from="1736200012253" duration="20674000" />
+      <workItem from="1736200012253" duration="24880000" />
     </task>
     <servers />
   </component>

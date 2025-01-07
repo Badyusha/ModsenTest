@@ -6,7 +6,6 @@ import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
 import com.modsen.commonmodels.models.dtos.BookInfoDto;
 import com.modsen.commonmodels.models.entities.BookInfo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
