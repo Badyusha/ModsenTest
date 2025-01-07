@@ -42,7 +42,10 @@ public class BookInfo {
     @Column
     private LocalDateTime returnDue;
 
-    public BookInfo(Long bookId, BookInfoStatus bookInfoStatus, LocalDateTime borrowedAt, LocalDateTime returnDue) {
+    public BookInfo(Long bookId,
+                    BookInfoStatus bookInfoStatus,
+                    LocalDateTime borrowedAt,
+                    LocalDateTime returnDue) {
         this.bookId = bookId;
         this.bookInfoStatus = bookInfoStatus;
         this.borrowedAt = borrowedAt;

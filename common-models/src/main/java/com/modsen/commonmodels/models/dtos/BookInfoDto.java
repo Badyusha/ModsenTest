@@ -1,6 +1,7 @@
 package com.modsen.commonmodels.models.dtos;
 
 import com.modsen.commonmodels.enums.attributes.BookInfoStatus;
+import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
 import com.modsen.commonmodels.models.entities.BookInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,10 +15,10 @@ import java.io.Serializable;
 public class BookInfoDto implements Serializable {
     private Long bookId;
 
-    public BookInfo toBookInfo() {
+    public BookInfo toBookInfo() throws ObjectNotFoundException {
         Long bookId = this.getBookId();
         if (bookId == null) {
-            throw new RuntimeException("BookInfo cannot be created. Book id is missing!");
+            throw new ObjectNotFoundException("BookInfo cannot be created. Book id is missing!");
         }
 
         return new BookInfo(bookId, BookInfoStatus.AVAILABLE, null, null);

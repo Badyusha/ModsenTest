@@ -6,23 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/BookStorageServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/BookStorageServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/TokenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/kafka/KafkaProducer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/TokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/BookTrackerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/BookTrackerServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/TokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/exceptions/BookIsNullException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/BookInfoListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/BookInfoListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/kafka/KafkaConsumer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/CommonModulesApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/entityAttributes/BookInfoStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/attributes/BookInfoStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/entityAttributes/CreationStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/attributes/CreationStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/dtos/BookInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/dtos/BookInfoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/BookInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/models/entities/BookInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +30,7 @@
         <option value="Record" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -57,41 +53,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.modsen [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.modsen [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BookStorageServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.BookTrackerServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CommonModulesApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;jwt__authentication&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;23&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/work/ModsenTest/common-models/src/main/java/com/modsen/commonmodels&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.25287357&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.book-storage-service [clean].executor": "Run",
+    "Maven.book-storage-service [install].executor": "Run",
+    "Maven.modsen [clean].executor": "Run",
+    "Maven.modsen [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.BookStorageServiceApplication.executor": "Run",
+    "Spring Boot.BookTrackerServiceApplication.executor": "Run",
+    "Spring Boot.CommonModulesApplication.executor": "Run",
+    "git-widget-placeholder": "jwt__authentication",
+    "jdk.selected.JAVA_MODULE": "23",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/work/ModsenTest/common-models/src/main/java/com/modsen/commonmodels/exceptions",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.25287357",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\ModsenTest\common-models\src\main\java\com\modsen\commonmodels\exceptions" />
       <recent name="D:\work\ModsenTest\common-models\src\main\java\com\modsen\commonmodels" />
       <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources" />
       <recent name="D:\work\ModsenTest\book-tracker-service\src\main\java\com\modsen\booktrackerservice" />
       <recent name="D:\work\ModsenTest\book-storage-service\src\main\java\com\modsen\bookstorageservice" />
-      <recent name="D:\work\ModsenTest\common-models\src\main\java\com\modsen\commonmodules" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.modsen.commonmodels.services" />
@@ -149,7 +147,7 @@
       <updated>1736046604242</updated>
       <workItem from="1736046605316" duration="2822000" />
       <workItem from="1736049748997" duration="8369000" />
-      <workItem from="1736200012253" duration="11479000" />
+      <workItem from="1736200012253" duration="20674000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ package com.modsen.booktrackerservice.kafka;
 import com.modsen.booktrackerservice.repositories.BookInfoRepository;
 import com.modsen.booktrackerservice.services.BookInfoService;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
+import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
 import com.modsen.commonmodels.models.dtos.BookInfoDto;
 import com.modsen.commonmodels.models.entities.BookInfo;
 import lombok.RequiredArgsConstructor;
@@ -20,14 +21,23 @@ public class BookInfoListener {
     public ResponseEntity<BookInfo> listenForCreation(String bookId) {
         Long bookIdLong = Long.parseLong(bookId);
         BookInfoDto bookInfoDto = new BookInfoDto(bookIdLong);
-
-        return bookInfoService.getCreateBookInfoResponseEntity(bookInfoDto);
+        try {
+            BookInfo bookInfo = bookInfoService.createBook(bookInfoDto);
+            return ResponseEntity.ok(bookInfo);
+        } catch (ObjectNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @KafkaListener(topics = KafkaTopic.Constants.DELETION_TOPIC_VALUE, groupId = "book-tracker-service")
     public ResponseEntity<Void> listenForDeletion(String bookId) {
         Long bookIdLong = Long.parseLong(bookId);
-        return bookInfoService.getDeleteBookInfoResponseEntity(bookIdLong);
+        try {
+            bookInfoService.deleteBookInfo(bookIdLong);
+            return ResponseEntity.ok().build();
+        } catch (ObjectNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
 
