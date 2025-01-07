@@ -1,6 +1,6 @@
 package com.modsen.commonmodels.models.entities;
 
-import com.modsen.commonmodels.enums.entityAttributes.BookInfoStatus;
+import com.modsen.commonmodels.enums.attributes.BookInfoStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

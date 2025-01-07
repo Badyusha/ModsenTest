@@ -1,4 +1,4 @@
-package com.modsen.commonmodels.enums.entityAttributes;
+package com.modsen.commonmodels.enums.attributes;
 
 public enum CreationStatus {
     EXISTS,

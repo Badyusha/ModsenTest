@@ -6,6 +6,7 @@ import com.modsen.commonmodels.enums.kafka.KafkaTopic;
 import com.modsen.commonmodels.models.dtos.BookInfoDto;
 import com.modsen.commonmodels.models.entities.BookInfo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -16,21 +17,17 @@ public class BookInfoListener {
     private final BookInfoService bookInfoService;
 
     @KafkaListener(topics = KafkaTopic.Constants.CREATION_TOPIC_VALUE, groupId = "book-tracker-service")
-    public void listenForCreation(String bookId) {
+    public ResponseEntity<BookInfo> listenForCreation(String bookId) {
         Long bookIdLong = Long.parseLong(bookId);
-
         BookInfoDto bookInfoDto = new BookInfoDto(bookIdLong);
-        BookInfo bookInfo = bookInfoService.fillInBookInfo(bookInfoDto);
 
-        if (bookInfo != null) {
-            bookInfoRepository.save(bookInfo);
-        }
+        return bookInfoService.getCreateBookInfoResponseEntity(bookInfoDto);
     }
 
     @KafkaListener(topics = KafkaTopic.Constants.DELETION_TOPIC_VALUE, groupId = "book-tracker-service")
-    public void listenForDeletion(String bookId) {
+    public ResponseEntity<Void> listenForDeletion(String bookId) {
         Long bookIdLong = Long.parseLong(bookId);
-        System.out.println(bookInfoService.softDeleteBookInfo(bookIdLong));
+        return bookInfoService.getDeleteBookInfoResponseEntity(bookIdLong);
     }
 }
 

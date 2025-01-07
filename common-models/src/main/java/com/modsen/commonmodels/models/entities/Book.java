@@ -1,6 +1,6 @@
 package com.modsen.commonmodels.models.entities;
 
-import com.modsen.commonmodels.enums.entityAttributes.CreationStatus;
+import com.modsen.commonmodels.enums.attributes.CreationStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,4 +36,15 @@ public class Book {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CreationStatus creationStatus;
+
+    /**
+        Creates copy for current object from provided
+    */
+    public void copy(Book book) {
+        this.isbn = book.getIsbn();
+        this.title = book.getTitle();
+        this.genre = book.getGenre();
+        this.description = book.getDescription();
+        this.author = book.getAuthor();
+    }
 }
