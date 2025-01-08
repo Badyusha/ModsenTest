@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" afterDir="false" />
-    </list>
+    <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +54,7 @@
     "Spring Boot.BookStorageServiceApplication.executor": "Run",
     "Spring Boot.BookTrackerServiceApplication.executor": "Run",
     "Spring Boot.CommonModulesApplication.executor": "Run",
-    "git-widget-placeholder": "jwt__authentication",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/work/ModsenTest/common-models/src/main/java/com/modsen/commonmodels/exceptions",
@@ -65,7 +63,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.25287357",
     "run.configurations.included.in.services": "true",
@@ -95,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest">
+  <component name="RunManager" selected="Spring Boot.BookStorageServiceApplication">
     <configuration name="BookInfoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="book-tracker-service" />
       <extension name="coverage">
@@ -121,6 +119,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.services" />
       <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.services.BookServiceTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,13 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonModulesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="common-models" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.modsen.commonmodels.CommonModulesApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="JUnit.BookInfoServiceTest" />
+      <item itemvalue="JUnit.BookServiceTest" />
+      <item itemvalue="Spring Boot.BookStorageServiceApplication" />
+      <item itemvalue="Spring Boot.BookTrackerServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BookServiceTest" />
