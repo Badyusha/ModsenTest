@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/TokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/TokenService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/TokenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/TokenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,7 @@
     "git-widget-placeholder": "refactor",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/work/ModsenTest/book-tracker-service/src/main/java/com/modsen/booktrackerservice",
+    "last_opened_file_path": "D:/work/ModsenTest/book-tracker-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,11 +84,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources" />
       <recent name="D:\work\ModsenTest\book-tracker-service\src\main\java\com\modsen\booktrackerservice" />
       <recent name="D:\work\ModsenTest\book-storage-service\src\main\java\com\modsen\bookstorageservice" />
       <recent name="D:\work\ModsenTest\common-models\src\main\java\com\modsen\commonmodels\exceptions" />
       <recent name="D:\work\ModsenTest\common-models\src\main\java\com\modsen\commonmodels" />
-      <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources\db" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.modsen.bookstorageservice.services" />

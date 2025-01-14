@@ -43,6 +43,14 @@
             <artifactId>common-models</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- Liquibase -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.23.2</version>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

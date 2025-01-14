@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ChangeSet for creating the book_info table -->
+    <changeSet id="001-create-book-info-table" author="pablo">
+        <createTable tableName="book_info">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="isbn" type="VARCHAR(10)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="status" type="ENUM('AVAILABLE','BORROWED','DELETED')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="borrowed_at" type="DATETIME"/>
+            <column name="return_due" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ChangeSet for inserting data into book_info table -->
+    <changeSet id="002-insert-book-info-data" author="pablo">
+        <insert tableName="book_info">
+            <column name="isbn" value="1234567890"/>
+            <column name="status" value="AVAILABLE"/>
+            <column name="borrowed_at" value="NULL"/>
+            <column name="return_due" value="NULL"/>
+        </insert>
+        <insert tableName="book_info">
+            <column name="isbn" value="0987654321"/>
+            <column name="status" value="BORROWED"/>
+            <column name="borrowed_at" value="2025-01-01T10:00:00"/>
+            <column name="return_due" value="2025-01-15T10:00:00"/>
+        </insert>
+        <insert tableName="book_info">
+            <column name="isbn" value="1122334455"/>
+            <column name="status" value="DELETED"/>
+            <column name="borrowed_at" value="NULL"/>
+            <column name="return_due" value="NULL"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

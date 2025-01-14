@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ChangeSet for creating the book table -->
+    <changeSet id="001-create-book-table" author="pablo">
+        <createTable tableName="book">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="isbn" type="VARCHAR(10)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="genre" type="VARCHAR(255)" />
+            <column name="description" type="VARCHAR(1000)" />
+            <column name="author" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creation_status" type="ENUM('EXISTS','DELETED')">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- ChangeSet for inserting data into book table -->
+    <changeSet id="002-insert-book-data" author="pablo">
+        <insert tableName="book">
+            <column name="isbn" value="1234567890"/>
+            <column name="title" value="First Book"/>
+            <column name="genre" value="Fiction"/>
+            <column name="description" value="This is the first book description."/>
+            <column name="author" value="Author One"/>
+            <column name="creation_status" value="EXISTS"/>
+        </insert>
+        <insert tableName="book">
+            <column name="isbn" value="0987654321"/>
+            <column name="title" value="Second Book"/>
+            <column name="genre" value="Non-Fiction"/>
+            <column name="description" value="Description of the second book."/>
+            <column name="author" value="Author Two"/>
+            <column name="creation_status" value="EXISTS"/>
+        </insert>
+        <insert tableName="book">
+            <column name="isbn" value="1122334455"/>
+            <column name="title" value="Third Book"/>
+            <column name="genre" value="Science"/>
+            <column name="description" value="Details about the third book."/>
+            <column name="author" value="Author Three"/>
+            <column name="creation_status" value="EXISTS"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
