@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class BookController {
     private final BookService bookService;
 
     @Operation(summary = "Create new book and send request to book-tracker-service via Kafka")
+    @PreAuthorize("hasRole('PUBLISHER')")
     @PostMapping
     public BookDTO createBook(@RequestBody BookDTO bookDTO) {
         return bookService.createBook(bookDTO);
@@ -44,6 +46,7 @@ public class BookController {
     }
 
     @Operation(summary = "Update book with provided id as a path param and request body")
+    @PreAuthorize("hasRole('PUBLISHER')")
     @PutMapping("/{id}")
     public BookDTO updateBook(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
         try {
@@ -54,6 +57,7 @@ public class BookController {
     }
 
     @Operation(summary = "Soft delete book with provided id")
+    @PreAuthorize("hasRole('PUBLISHER')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
         try {

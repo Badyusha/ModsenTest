@@ -81,7 +81,7 @@ public class BookService {
         bookRepository.save(book);
 
         // delete by isbn in book-tracker-service
-        kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, book.getIsbn());
+         kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, book.getIsbn());
     }
 
 }
