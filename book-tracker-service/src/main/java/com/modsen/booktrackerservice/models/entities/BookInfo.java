@@ -1,6 +1,6 @@
-package com.modsen.commonmodels.models.entities;
+package com.modsen.booktrackerservice.models.entities;
 
-import com.modsen.commonmodels.enums.attributes.BookInfoStatus;
+import com.modsen.booktrackerservice.enums.attributes.BookInfoStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,17 +20,8 @@ public class BookInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "book_id",
-                referencedColumnName = "id",
-                nullable = false,
-                insertable = false,
-                updatable = false,
-                unique = true)
-    private Book book;
-
-    @Column(name = "book_id")
-    private Long bookId;
+    @Column(nullable = false, unique = true, length = 10)
+    private String isbn;
 
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -42,11 +33,11 @@ public class BookInfo {
     @Column
     private LocalDateTime returnDue;
 
-    public BookInfo(Long bookId,
+    public BookInfo(String isbn,
                     BookInfoStatus bookInfoStatus,
                     LocalDateTime borrowedAt,
                     LocalDateTime returnDue) {
-        this.bookId = bookId;
+        this.isbn = isbn;
         this.bookInfoStatus = bookInfoStatus;
         this.borrowedAt = borrowedAt;
         this.returnDue = returnDue;

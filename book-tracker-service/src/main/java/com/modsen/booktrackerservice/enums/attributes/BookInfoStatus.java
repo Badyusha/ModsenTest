@@ -1,4 +1,4 @@
-package com.modsen.commonmodels.enums.attributes;
+package com.modsen.booktrackerservice.enums.attributes;
 
 public enum BookInfoStatus {
     AVAILABLE,

@@ -1,4 +1,4 @@
-package com.modsen.commonmodels.enums.attributes;
+package com.modsen.bookstorageservice.enums.attributes;
 
 public enum CreationStatus {
     EXISTS,

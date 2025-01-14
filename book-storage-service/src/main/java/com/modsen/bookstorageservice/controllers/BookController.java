@@ -1,8 +1,8 @@
 package com.modsen.bookstorageservice.controllers;
 
+import com.modsen.bookstorageservice.models.dtos.BookDTO;
 import com.modsen.bookstorageservice.services.BookService;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
-import com.modsen.commonmodels.models.entities.Book;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -21,49 +21,46 @@ public class BookController {
 
     @Operation(summary = "Create new book and send request to book-tracker-service via Kafka")
     @PostMapping
-    public ResponseEntity<Book> createBook(@RequestBody Book book) {
-        return ResponseEntity.ok(bookService.createBook(book));
+    public BookDTO createBook(@RequestBody BookDTO bookDTO) {
+        return bookService.createBook(bookDTO);
     }
 
     @Operation(summary = "Show all books")
     @GetMapping
-    public ResponseEntity<List<Book>> getAllBooks() {
-        return ResponseEntity.ok(bookService.getAllBooks());
+    public List<BookDTO> getAllBooks() {
+        return bookService.getAllBooks();
     }
 
     @Operation(summary = "Show book with provided ISBN")
     @GetMapping("/isbn/{isbn}")
-    public ResponseEntity<Book> getBookByIsbn(@PathVariable String isbn) {
-        return bookService.getBookByIsbn(isbn)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public BookDTO getBookByIsbn(@PathVariable String isbn) {
+        return bookService.getBookByIsbn(isbn);
     }
 
     @Operation(summary = "Show book with provided id")
     @GetMapping("/{id}")
-    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
-        return bookService.getBookById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public BookDTO getBookById(@PathVariable Long id) {
+        return bookService.getBookById(id);
     }
 
     @Operation(summary = "Update book with provided id as a path param and request body")
     @PutMapping("/{id}")
-    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
+    public BookDTO updateBook(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
         try {
-            Book updatedBook = bookService.updateBook(id, book);
-            return ResponseEntity.ok(updatedBook);
+            return bookService.updateBook(id, bookDTO);
         } catch (ObjectNotFoundException e) {
-            return ResponseEntity.notFound().build();
+            throw new RuntimeException("Unable to update book. Book with provided id does not exist");
         }
     }
 
     @Operation(summary = "Soft delete book with provided id")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-        if(bookService.softDeleteBookInfo(id)) {
-            return ResponseEntity.noContent().build();
+        try {
+            bookService.deleteBookInfo(id);
+            return ResponseEntity.ok().build();
+        } catch (ObjectNotFoundException e) {
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
     }
 }

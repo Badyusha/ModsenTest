@@ -1,6 +1,6 @@
-package com.modsen.commonmodels.models.entities;
+package com.modsen.bookstorageservice.models.entities;
 
-import com.modsen.commonmodels.enums.attributes.CreationStatus;
+import com.modsen.bookstorageservice.enums.attributes.CreationStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +18,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 10)
     private String isbn;
 
     @Column(nullable = false)

@@ -8,7 +8,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties(RsaKeyProperties.class)
-@EntityScan(basePackages = "com.modsen.commonmodels.models.entities")
 public class BookTrackerServiceApplication {
 
     public static void main(String[] args) {

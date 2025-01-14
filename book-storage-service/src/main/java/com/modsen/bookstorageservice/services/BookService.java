@@ -1,67 +1,87 @@
 package com.modsen.bookstorageservice.services;
 
+import com.modsen.bookstorageservice.enums.attributes.CreationStatus;
+import com.modsen.bookstorageservice.mappers.BookDTOMapper;
+import com.modsen.bookstorageservice.mappers.BookMapper;
+import com.modsen.bookstorageservice.models.dtos.BookDTO;
+import com.modsen.bookstorageservice.models.entities.Book;
 import com.modsen.bookstorageservice.repositories.BookRepository;
-import com.modsen.commonmodels.enums.attributes.CreationStatus;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
-import com.modsen.commonmodels.models.entities.Book;
+import com.modsen.commonmodels.exceptions.UnableToCastObjectToDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class BookService {
 
+    private final BookMapper bookMapper;
+    private final BookDTOMapper bookDTOMapper;
     private final BookRepository bookRepository;
     private final KafkaTemplate<String, String> kafkaTemplate;
-    public Book createBook(Book book) {
-        book.setCreationStatus(CreationStatus.EXISTS);
+
+    public BookDTO createBook(BookDTO bookDTO) {
+        bookDTO.setCreationStatus(CreationStatus.EXISTS);
+        Book book = bookDTOMapper.toBook(bookDTO);
         Book savedBook = bookRepository.save(book);
 
-        kafkaTemplate.send(KafkaTopic.Constants.CREATION_TOPIC_VALUE, savedBook.getId().toString());
+        kafkaTemplate.send(KafkaTopic.Constants.CREATION_TOPIC_VALUE, savedBook.getIsbn());
 
-        return savedBook;
+        return bookMapper.toBookDTO(savedBook);
     }
 
-    public Book updateBook(Long id, Book book) throws ObjectNotFoundException {
+    public BookDTO updateBook(Long id, BookDTO bookDTO) throws ObjectNotFoundException {
         return bookRepository.findById(id)
                 .map(existingBook -> {
+                    Book book = bookDTOMapper.toBook(bookDTO);
                     existingBook.copy(book);
-                    return bookRepository.save(existingBook);
+                    Book savedBook = bookRepository.save(existingBook);
+                    return bookMapper.toBookDTO(savedBook);
                 })
                 .orElseThrow(() ->
                     new ObjectNotFoundException("Book cannot be updated. Book with provided id does not exist"));
     }
 
-    public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+    public List<BookDTO> getAllBooks() {
+        return bookRepository.findAll().stream()
+                .map(bookMapper::toBookDTO)
+                .collect(Collectors.toList());
     }
 
-    public Optional<Book> getBookByIsbn(String isbn) {
-        return bookRepository.findByIsbn(isbn);
+    public BookDTO getBookByIsbn(String isbn) {
+        return bookRepository.findByIsbn(isbn)
+                .map(bookMapper::toBookDTO)
+                .orElseThrow(() -> new UnableToCastObjectToDTO("Book with provided ISBN does not exist"));
     }
 
-    public Optional<Book> getBookById(Long id) {
-        return bookRepository.findById(id);
+    public BookDTO getBookById(Long id) {
+        return bookRepository.findById(id)
+                .map(bookMapper::toBookDTO)
+                .orElseThrow(() -> new UnableToCastObjectToDTO("Book with provided ISBN does not exist"));
     }
 
-    public boolean softDeleteBookInfo(Long bookId) {
+    public void deleteBookInfo(Long bookId) throws ObjectNotFoundException {
+        softDeleteBookInfo(bookId);
+    }
+
+    private void softDeleteBookInfo(Long bookId) throws ObjectNotFoundException {
         Optional<Book> bookOptional = bookRepository.findById(bookId);
         if (bookOptional.isEmpty()) {
-            return false;
+            throw new ObjectNotFoundException("Book cannot be found. Book with provided id does not exist");
         }
 
         Book book = bookOptional.get();
         book.setCreationStatus(CreationStatus.DELETED);
         bookRepository.save(book);
 
-        kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, bookId.toString());
-
-        return true;
+        // delete by isbn in book-tracker-service
+        kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, book.getIsbn());
     }
 
 }

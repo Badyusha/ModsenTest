@@ -1,5 +1,6 @@
 package com.modsen.bookstorageservice.services;
 
+import com.modsen.bookstorageservice.models.dtos.BookDTO;
 import com.modsen.bookstorageservice.repositories.BookRepository;
 import com.modsen.commonmodels.enums.attributes.CreationStatus;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
@@ -31,53 +32,53 @@ public class BookServiceTest {
     @InjectMocks
     private BookService bookService;
 
-    private Book book;
+    private BookDTO bookDTO;
 
     @BeforeEach
     void setup() {
-        book = new Book();
-        book.setId(1L);
-        book.setIsbn("1234567");
-        book.setCreationStatus(CreationStatus.EXISTS);
+        bookDTO = new BookDTO();
+        bookDTO.setId(1L);
+        bookDTO.setIsbn("1234567");
+        bookDTO.setCreationStatus(CreationStatus.EXISTS);
     }
 
     @Test
     void createBook_shouldSaveBookAndSendMessage() {
-        when(bookRepository.save(any(Book.class))).thenReturn(book);
+        when(bookRepository.save(any(Book.class))).thenReturn(bookDTO);
 
-        Book createdBook = bookService.createBook(book);
+        BookDTO createdBook = bookService.createBook(bookDTO);
 
         assertNotNull(createdBook);
         assertEquals(CreationStatus.EXISTS, createdBook.getCreationStatus());
-        verify(bookRepository).save(book);
+        verify(bookRepository).save(bookDTO);
         verify(kafkaTemplate).send(KafkaTopic.Constants.CREATION_TOPIC_VALUE, createdBook.getId().toString());
     }
 
     @Test
     void updateBook_shouldUpdateBookDetails() throws ObjectNotFoundException {
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
-        when(bookRepository.save(any(Book.class))).thenReturn(book);
+        when(bookRepository.findById(1L)).thenReturn(Optional.of(bookDTO));
+        when(bookRepository.save(any(Book.class))).thenReturn(bookDTO);
 
-        Book updatedBook = bookService.updateBook(1L, book);
+        BookDTO updatedBook = bookService.updateBook(1L, bookDTO);
 
         assertNotNull(updatedBook);
         verify(bookRepository).findById(1L);
-        verify(bookRepository).save(book);
+        verify(bookRepository).save(bookDTO);
     }
 
     @Test
     void updateBook_shouldThrowExceptionWhenBookNotFound() {
         when(bookRepository.findById(1L)).thenReturn(Optional.empty());
 
-        assertThrows(ObjectNotFoundException.class, () -> bookService.updateBook(1L, book));
+        assertThrows(ObjectNotFoundException.class, () -> bookService.updateBook(1L, bookDTO));
         verify(bookRepository, never()).save(any(Book.class));
     }
 
     @Test
     void getAllBooks_shouldReturnAllBooks() {
-        when(bookRepository.findAll()).thenReturn(List.of(book));
+        when(bookRepository.findAll()).thenReturn(List.of(bookDTO));
 
-        List<Book> books = bookService.getAllBooks();
+        List<BookDTO> books = bookService.getAllBooks();
 
         assertNotNull(books);
         assertEquals(1, books.size());
@@ -86,7 +87,7 @@ public class BookServiceTest {
 
     @Test
     void getBookByIsbn_shouldReturnBookIfFound() {
-        when(bookRepository.findByIsbn("1234567")).thenReturn(Optional.of(book));
+        when(bookRepository.findByIsbn("1234567")).thenReturn(Optional.of(bookDTO));
 
         Optional<Book> foundBook = bookService.getBookByIsbn("1234567");
 
@@ -107,7 +108,7 @@ public class BookServiceTest {
 
     @Test
     void getBookById_shouldReturnBookIfFound() {
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.findById(1L)).thenReturn(Optional.of(bookDTO));
 
         Optional<Book> foundBook = bookService.getBookById(1L);
 
@@ -128,13 +129,13 @@ public class BookServiceTest {
 
     @Test
     void softDeleteBookInfo_shouldSetStatusToDeletedAndSendMessage() {
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.findById(1L)).thenReturn(Optional.of(bookDTO));
 
         boolean result = bookService.softDeleteBookInfo(1L);
 
         assertTrue(result);
-        assertEquals(CreationStatus.DELETED, book.getCreationStatus());
-        verify(bookRepository).save(book);
+        assertEquals(CreationStatus.DELETED, bookDTO.getCreationStatus());
+        verify(bookRepository).save(bookDTO);
         verify(kafkaTemplate).send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, "1");
     }
 

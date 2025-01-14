@@ -1,6 +1,6 @@
 package com.modsen.bookstorageservice.repositories;
 
-import com.modsen.commonmodels.models.entities.Book;
+import com.modsen.bookstorageservice.models.entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
