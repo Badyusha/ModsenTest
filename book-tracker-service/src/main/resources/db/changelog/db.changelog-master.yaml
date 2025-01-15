@@ -1,0 +1,86 @@
+databaseChangeLog:
+  - changeSet:
+      id: "001-create-book-info-table"
+      author: "pablo"
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: "book_info"
+      changes:
+        - createTable:
+            tableName: "book_info"
+            columns:
+              - column:
+                  name: "id"
+                  type: "BIGINT"
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: "isbn"
+                  type: "VARCHAR(10)"
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: "status"
+                  type: "ENUM('AVAILABLE','BORROWED','DELETED')"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "borrowed_at"
+                  type: "DATETIME"
+              - column:
+                  name: "return_due"
+                  type: "DATETIME"
+
+  - changeSet:
+      id: "002-insert-book-info-data"
+      author: "pablo"
+      changes:
+        - insert:
+            tableName: "book_info"
+            columns:
+              - column:
+                  name: "isbn"
+                  value: "1234567890"
+              - column:
+                  name: "status"
+                  value: "AVAILABLE"
+              - column:
+                  name: "borrowed_at"
+                  value: null
+              - column:
+                  name: "return_due"
+                  value: null
+        - insert:
+            tableName: "book_info"
+            columns:
+              - column:
+                  name: "isbn"
+                  value: "0987654321"
+              - column:
+                  name: "status"
+                  value: "BORROWED"
+              - column:
+                  name: "borrowed_at"
+                  value: "2025-01-01T10:00:00"
+              - column:
+                  name: "return_due"
+                  value: "2025-01-15T10:00:00"
+        - insert:
+            tableName: "book_info"
+            columns:
+              - column:
+                  name: "isbn"
+                  value: "1122334455"
+              - column:
+                  name: "status"
+                  value: "DELETED"
+              - column:
+                  name: "borrowed_at"
+                  value: null
+              - column:
+                  name: "return_due"
+                  value: null

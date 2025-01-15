@@ -9,6 +9,7 @@ import com.modsen.bookstorageservice.repositories.BookRepository;
 import com.modsen.commonmodels.enums.kafka.KafkaTopic;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
 import com.modsen.commonmodels.exceptions.UnableToCastObjectToDTO;
+import com.modsen.commonmodels.exceptions.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -24,9 +25,12 @@ public class BookService {
     private final BookMapper bookMapper;
     private final BookDTOMapper bookDTOMapper;
     private final BookRepository bookRepository;
+    private final ValidationService validationService;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public BookDTO createBook(BookDTO bookDTO) {
+    public BookDTO createBook(BookDTO bookDTO) throws ValidationException {
+        validationService.validate(bookDTO);
+
         bookDTO.setCreationStatus(CreationStatus.EXISTS);
         Book book = bookDTOMapper.toBook(bookDTO);
         Book savedBook = bookRepository.save(book);

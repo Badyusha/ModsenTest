@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +21,8 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Exception" />
         <option value="Interface" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -47,7 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.BookStorageServiceApplication.executor": "Run",
+    "Application.BookStorageServiceApplication.executor": "Debug",
     "Application.BookTrackerServiceApplication.executor": "Run",
     "JUnit.BookInfoServiceTest.executor": "Run",
     "Maven.book-storage-service [clean].executor": "Run",
@@ -201,5 +202,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/ValidationService.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

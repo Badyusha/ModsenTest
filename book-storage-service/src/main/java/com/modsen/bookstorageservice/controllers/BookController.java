@@ -3,6 +3,7 @@ package com.modsen.bookstorageservice.controllers;
 import com.modsen.bookstorageservice.models.dtos.BookDTO;
 import com.modsen.bookstorageservice.services.BookService;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
+import com.modsen.commonmodels.exceptions.ValidationException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,11 @@ public class BookController {
     @PreAuthorize("hasRole('PUBLISHER')")
     @PostMapping
     public BookDTO createBook(@RequestBody BookDTO bookDTO) {
-        return bookService.createBook(bookDTO);
+        try {
+            return bookService.createBook(bookDTO);
+        } catch (ValidationException e) {
+            throw new RuntimeException("Unable to create book! Some fields are not valid!");
+        }
     }
 
     @Operation(summary = "Show all books")
