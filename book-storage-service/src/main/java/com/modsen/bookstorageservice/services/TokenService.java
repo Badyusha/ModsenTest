@@ -20,7 +20,7 @@ public class TokenService {
 
     public String generateToken(final String role) {
         if(!isRoleExist(role)) {
-            return "Incorrect role name! Available: " + Arrays.toString(Constants.roles);
+            return "Incorrect role name! Available: " + Arrays.toString(Constants.ROLES);
         }
 
         Instant now = Instant.now();
@@ -34,6 +34,6 @@ public class TokenService {
     }
 
     private boolean isRoleExist(String role) {
-        return Arrays.asList(Constants.roles).contains(role);
+        return Arrays.asList(Constants.ROLES).contains(role);
     }
 }

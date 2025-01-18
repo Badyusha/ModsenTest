@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class BookInfoDTO {
     private Long id;
     private String isbn;
+    private Long userId;
     private BookInfoStatus bookInfoStatus;
     private LocalDateTime borrowedAt;
     private LocalDateTime returnDue;

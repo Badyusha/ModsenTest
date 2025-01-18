@@ -44,10 +44,10 @@ public class SecurityConfig {
 
                         .requestMatchers(HttpMethod.POST, "/book-tracker-service/v1/books")
                         .hasRole("PUBLISHER")
-                        .requestMatchers(HttpMethod.PUT, "/book-tracker-service/v1/books/{id}")
-                        .hasRole("PUBLISHER")
                         .requestMatchers(HttpMethod.DELETE, "/book-tracker-service/v1/books/{isbn}")
                         .hasRole("PUBLISHER")
+                        .requestMatchers(HttpMethod.PUT, "/book-tracker-service/v1/books/{id}")
+                        .hasRole("USER")
 
                         .anyRequest().authenticated()
                 )

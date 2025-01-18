@@ -2,7 +2,7 @@ package com.modsen.commonmodels.enums.kafka;
 
 public enum KafkaTopic {
     CREATION_TOPIC(Constants.CREATION_TOPIC_VALUE),
-    DELETION_TOPIC(Constants.DELETION_TOPIC_VALUE),;
+    DELETION_TOPIC(Constants.DELETION_TOPIC_VALUE);
 
     KafkaTopic(String name) {
         if (!name.equals(this.name())) {

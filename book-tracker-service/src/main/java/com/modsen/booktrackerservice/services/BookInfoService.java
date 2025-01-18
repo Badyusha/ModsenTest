@@ -6,6 +6,7 @@ import com.modsen.booktrackerservice.mappers.BookInfoMapper;
 import com.modsen.booktrackerservice.models.dtos.BookInfoDTO;
 import com.modsen.booktrackerservice.models.entities.BookInfo;
 import com.modsen.booktrackerservice.repositories.BookInfoRepository;
+import com.modsen.commonmodels.exceptions.InvalidArgumentException;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class BookInfoService {
 
     public BookInfoDTO createBook(BookInfoDTO bookInfoDTO) {
         bookInfoDTO.setBookInfoStatus(BookInfoStatus.AVAILABLE);
+        bookInfoDTO.setUserId(null);
         BookInfo bookInfo = bookInfoDTOMapper.toBookInfo(bookInfoDTO);
         BookInfo savedBook = bookInfoRepository.save(bookInfo);
 
@@ -38,6 +40,10 @@ public class BookInfoService {
     }
 
     public BookInfoDTO updateBookStatus(Long id, BookInfoStatus bookInfoStatus) throws ObjectNotFoundException {
+        if(bookInfoStatus.equals(BookInfoStatus.DELETED)) {
+            throw new InvalidArgumentException("Book status can't be set DELETED in PUT method");
+        }
+
         return bookInfoRepository.findById(id)
                 .map(bookInfoDTO -> {
                     bookInfoDTO.setBookInfoStatus(bookInfoStatus);

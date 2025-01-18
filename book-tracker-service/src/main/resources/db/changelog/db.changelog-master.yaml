@@ -43,6 +43,9 @@ databaseChangeLog:
             tableName: "book_info"
             columns:
               - column:
+                  name: "user_id"
+                  value: "1"
+              - column:
                   name: "isbn"
                   value: "1234567890"
               - column:
@@ -58,6 +61,9 @@ databaseChangeLog:
             tableName: "book_info"
             columns:
               - column:
+                  name: "user_id"
+                  value: "1"
+              - column:
                   name: "isbn"
                   value: "0987654321"
               - column:
@@ -72,6 +78,9 @@ databaseChangeLog:
         - insert:
             tableName: "book_info"
             columns:
+              - column:
+                  name: "user_id"
+                  value: "1"
               - column:
                   name: "isbn"
                   value: "1122334455"

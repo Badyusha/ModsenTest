@@ -23,6 +23,9 @@ public class BookInfo {
     @Column(nullable = false, unique = true, length = 10)
     private String isbn;
 
+    @Column
+    private Long userId;
+
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private BookInfoStatus bookInfoStatus;
