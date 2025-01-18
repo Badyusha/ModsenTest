@@ -1,0 +1,115 @@
+#databaseChangeLog:
+#  - changeSet:
+#      id: "001-create-book-table"
+#      author: "pablo"
+#      preConditions:
+#        - onFail: MARK_RAN
+#          not:
+#            tableExists:
+#              tableName: "book"
+#      changes:
+#        - createTable:
+#            tableName: "book"
+#            ifNotExists: true
+#            columns:
+#              - column:
+#                  name: "id"
+#                  type: "BIGINT"
+#                  constraints:
+#                    primaryKey: true
+#                    nullable: false
+#              - column:
+#                  name: "isbn"
+#                  type: "VARCHAR(10)"
+#                  constraints:
+#                    nullable: false
+#                    unique: true
+#              - column:
+#                  name: "title"
+#                  type: "VARCHAR(255)"
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: "genre"
+#                  type: "VARCHAR(255)"
+#              - column:
+#                  name: "description"
+#                  type: "VARCHAR(1000)"
+#              - column:
+#                  name: "author"
+#                  type: "VARCHAR(255)"
+#                  constraints:
+#                    nullable: false
+#              - column:
+#                  name: "creation_status"
+#                  type: "ENUM('EXISTS','DELETED')"
+#                  constraints:
+#                    nullable: false
+#
+#  - changeSet:
+#      id: "002-insert-book-data"
+#      author: "pablo"
+#      changes:
+#        - insert:
+#            tableName: "book"
+#            columns:
+#              - column:
+#                  name: "isbn"
+#                  value: "1234567890"
+#              - column:
+#                  name: "title"
+#                  value: "First Book"
+#              - column:
+#                  name: "genre"
+#                  value: "Fiction"
+#              - column:
+#                  name: "description"
+#                  value: "This is the first book description."
+#              - column:
+#                  name: "author"
+#                  value: "Author One"
+#              - column:
+#                  name: "creation_status"
+#                  value: "EXISTS"
+#        - insert:
+#            tableName: "book"
+#            columns:
+#              - column:
+#                  name: "isbn"
+#                  value: "0987654321"
+#              - column:
+#                  name: "title"
+#                  value: "Second Book"
+#              - column:
+#                  name: "genre"
+#                  value: "Non-Fiction"
+#              - column:
+#                  name: "description"
+#                  value: "Description of the second book."
+#              - column:
+#                  name: "author"
+#                  value: "Author Two"
+#              - column:
+#                  name: "creation_status"
+#                  value: "EXISTS"
+#        - insert:
+#            tableName: "book"
+#            columns:
+#              - column:
+#                  name: "isbn"
+#                  value: "1122334455"
+#              - column:
+#                  name: "title"
+#                  value: "Third Book"
+#              - column:
+#                  name: "genre"
+#                  value: "Science"
+#              - column:
+#                  name: "description"
+#                  value: "Details about the third book."
+#              - column:
+#                  name: "author"
+#                  value: "Author Three"
+#              - column:
+#                  name: "creation_status"
+#                  value: "EXISTS"

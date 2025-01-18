@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @Tag(name = "Token Generator", description = "APIs for creating JWT token")
-@RestController("/user")
+@RestController
 public class AuthorizationController {
 
     private final TokenService tokenService;

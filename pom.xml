@@ -17,6 +17,7 @@
         <module>common-models</module>
         <module>book-storage-service</module>
         <module>book-tracker-service</module>
+        <module>user-storage-service</module>
     </modules>
 
     <dependencies>
