@@ -1,6 +1,6 @@
-package com.modsen.userstorage;
+package com.modsen.userstorageservice;
 
-import com.modsen.userstorage.configs.RsaKeyProperties;
+import com.modsen.userstorageservice.configs.RsaKeyProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

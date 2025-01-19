@@ -5,12 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/AuthorizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/AuthorizationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/AuthorizationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/TokenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/dtos/BookInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/dtos/BookInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/entities/BookInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/entities/BookInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/exceptions/PermissionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/exceptions/PermissionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/UserStorageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/UserStorageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/configs/RsaKeyProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/configs/RsaKeyProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/controllers/AuthorizationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/controllers/AuthorizationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/mappers/UserDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/mappers/UserDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/models/dtos/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/models/dtos/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/models/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/services/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/services/AuthorizationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorage/utils/EncryptionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/java/com/modsen/userstorageservice/utils/EncryptionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-storage-service/src/test/java/com/modsen/userstorage/UserStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-storage-service/src/test/java/com/modsen/userstorageservice/UserStorageApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +42,8 @@
       <list>
         <option value="Record" />
         <option value="Interface" />
-        <option value="Exception" />
         <option value="Enum" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -118,7 +138,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UserStorageServiceApplication">
+  <component name="RunManager" selected="Application.BookTrackerServiceApplication">
     <configuration name="BookStorageServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.BookStorageServiceApplication" />
       <module name="book-storage-service" />
@@ -148,7 +168,7 @@
     <configuration name="UserStorageServiceApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.modsen.userstorage.UserStorageApplication" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.userstorageservice.UserStorageApplication" />
       <module name="user-storage-service" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,8 +214,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BookStorageServiceApplication" />
         <item itemvalue="Application.BookTrackerServiceApplication" />
+        <item itemvalue="Application.BookStorageServiceApplication" />
         <item itemvalue="JUnit.BookServiceTest" />
         <item itemvalue="JUnit.BookInfoServiceTest" />
       </list>
@@ -218,16 +238,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/ValidationService.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

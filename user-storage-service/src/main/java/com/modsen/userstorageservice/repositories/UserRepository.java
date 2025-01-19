@@ -1,6 +1,6 @@
-package com.modsen.userstorage.repositories;
+package com.modsen.userstorageservice.repositories;
 
-import com.modsen.userstorage.models.entities.User;
+import com.modsen.userstorageservice.models.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

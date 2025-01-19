@@ -6,11 +6,15 @@ import com.modsen.booktrackerservice.mappers.BookInfoMapper;
 import com.modsen.booktrackerservice.models.dtos.BookInfoDTO;
 import com.modsen.booktrackerservice.models.entities.BookInfo;
 import com.modsen.booktrackerservice.repositories.BookInfoRepository;
+import com.modsen.booktrackerservice.utils.BookInfoUtil;
 import com.modsen.commonmodels.exceptions.InvalidArgumentException;
+import com.modsen.commonmodels.exceptions.NoSuchUserException;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
+import com.modsen.commonmodels.exceptions.PermissionException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Book;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -20,13 +24,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class BookInfoService {
 
-    private final BookInfoRepository bookInfoRepository;
+    private final TokenService tokenService;
     private final BookInfoMapper bookInfoMapper;
     private final BookInfoDTOMapper bookInfoDTOMapper;
+    private final BookInfoRepository bookInfoRepository;
 
     public BookInfoDTO createBook(BookInfoDTO bookInfoDTO) {
-        bookInfoDTO.setBookInfoStatus(BookInfoStatus.AVAILABLE);
-        bookInfoDTO.setUserId(null);
+        bookInfoDTO.fillIn();
         BookInfo bookInfo = bookInfoDTOMapper.toBookInfo(bookInfoDTO);
         BookInfo savedBook = bookInfoRepository.save(bookInfo);
 
@@ -39,23 +43,26 @@ public class BookInfoService {
                 .collect(Collectors.toList());
     }
 
-    public BookInfoDTO updateBookStatus(Long id, BookInfoStatus bookInfoStatus) throws ObjectNotFoundException {
+    public BookInfoDTO updateBookStatus(Long id,
+                                        BookInfoStatus bookInfoStatus,
+                                        String token) throws ObjectNotFoundException {
         if(bookInfoStatus.equals(BookInfoStatus.DELETED)) {
             throw new InvalidArgumentException("Book status can't be set DELETED in PUT method");
         }
 
         return bookInfoRepository.findById(id)
-                .map(bookInfoDTO -> {
-                    bookInfoDTO.setBookInfoStatus(bookInfoStatus);
+                .map(bookInfo -> {
+                    Long userId = tokenService.extractUserId(token);
+                    BookInfoUtil.validateUpdateRequest(bookInfo, userId);
+
+                    bookInfo.setBookInfoStatus(bookInfoStatus);
                     if (bookInfoStatus.equals(BookInfoStatus.BORROWED)) {
-                        bookInfoDTO.setBorrowedAt(LocalDateTime.now());
-                        bookInfoDTO.setReturnDue(LocalDateTime.now().plusWeeks(2));
+                        bookInfo.fillIn(userId);
                     } else {
-                        bookInfoDTO.setBorrowedAt(null);
-                        bookInfoDTO.setReturnDue(null);
+                        bookInfo.fillIn(null);
                     }
-                    BookInfo bookInfo = bookInfoRepository.save(bookInfoDTO);
-                    return bookInfoMapper.toBookInfoDTO(bookInfo);
+                    BookInfo savedBookInfo = bookInfoRepository.save(bookInfo);
+                    return bookInfoMapper.toBookInfoDTO(savedBookInfo);
                 })
                 .orElseThrow(() ->
                 new ObjectNotFoundException("Book info cannot be updated. Book info with provided id does not exist"));

@@ -1,6 +1,6 @@
-package com.modsen.userstorage.models.dtos;
+package com.modsen.userstorageservice.models.dtos;
 
-import com.modsen.userstorage.enums.Role;
+import com.modsen.userstorageservice.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

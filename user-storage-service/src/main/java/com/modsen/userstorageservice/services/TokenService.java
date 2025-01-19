@@ -1,7 +1,7 @@
-package com.modsen.userstorage.services;
+package com.modsen.userstorageservice.services;
 
 import com.modsen.commonmodels.Constants;
-import com.modsen.userstorage.models.dtos.UserDTO;
+import com.modsen.userstorageservice.models.dtos.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;

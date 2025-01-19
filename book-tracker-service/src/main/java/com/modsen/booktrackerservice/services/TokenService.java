@@ -1,38 +1,26 @@
 package com.modsen.booktrackerservice.services;
 
-import com.modsen.commonmodels.Constants;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.oauth2.jwt.JwtClaimsSet;
-import org.springframework.security.oauth2.jwt.JwtEncoder;
-import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-
-@Service
 @RequiredArgsConstructor
+@Service
 public class TokenService {
 
-    private final JwtEncoder jwtEncoder;
+    private final JwtDecoder jwtDecoder;
 
-    public String generateToken(final String role) {
-        if(!isRoleExist(role)) {
-            return "Incorrect role name! Available: " + Arrays.toString(Constants.ROLES);
-        }
+    private final String TOKEN_PREFIX = "Bearer ";
+    private final String USER_ID_CLAIM = "userId";
 
-        Instant now = Instant.now();
-        JwtClaimsSet claimsSet = JwtClaimsSet.builder()
-                .issuer("self")
-                .issuedAt(now)
-                .expiresAt(now.plus(3, ChronoUnit.HOURS))
-                .claim("roles", role)
-                .build();
-        return this.jwtEncoder.encode(JwtEncoderParameters.from(claimsSet)).getTokenValue();
+    public Long extractUserId(String token) {
+        String tokenWithoutPrefix = extractTokenPrefix(token);
+        Jwt jwt = jwtDecoder.decode(tokenWithoutPrefix);
+        return jwt.getClaim(USER_ID_CLAIM);
     }
 
-    private boolean isRoleExist(String role) {
-        return Arrays.asList(Constants.ROLES).contains(role);
+    private String extractTokenPrefix(String token) {
+        return token.substring(TOKEN_PREFIX.length());
     }
 }

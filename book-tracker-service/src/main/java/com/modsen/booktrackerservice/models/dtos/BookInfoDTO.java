@@ -1,7 +1,8 @@
 package com.modsen.booktrackerservice.models.dtos;
 
 import com.modsen.booktrackerservice.enums.attributes.BookInfoStatus;
-import jakarta.persistence.*;
+import com.modsen.commonmodels.Constants;
+import com.modsen.commonmodels.models.dtos.RequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +21,11 @@ public class BookInfoDTO {
     private BookInfoStatus bookInfoStatus;
     private LocalDateTime borrowedAt;
     private LocalDateTime returnDue;
+
+    public void fillIn() {
+        this.bookInfoStatus = BookInfoStatus.AVAILABLE;
+        this.userId = null;
+        this.borrowedAt = null;
+        this.returnDue = null;
+    }
 }

@@ -34,9 +34,11 @@ public class BookInfoController {
 
     @Operation(summary = "Update book infos with provided id as a path param and BookInfoStatus")
     @PutMapping("/{id}")
-    public BookInfoDTO updateBookStatus(@PathVariable Long id, @RequestParam BookInfoStatus bookInfoStatus) {
+    public BookInfoDTO updateBookStatus(@RequestHeader("Authorization") String token,
+                                        @PathVariable Long id,
+                                        @RequestParam BookInfoStatus bookInfoStatus) {
         try {
-            return bookInfoService.updateBookStatus(id, bookInfoStatus);
+            return bookInfoService.updateBookStatus(id, bookInfoStatus, token);
         } catch (ObjectNotFoundException e) {
             throw new RuntimeException("Unable to update book info. Book with provided id does not exist");
         }

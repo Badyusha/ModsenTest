@@ -1,9 +1,9 @@
-package com.modsen.userstorage.controllers;
+package com.modsen.userstorageservice.controllers;
 
 import com.modsen.commonmodels.exceptions.ValidationException;
-import com.modsen.userstorage.models.dtos.UserDTO;
-import com.modsen.userstorage.services.AuthorizationService;
-import com.modsen.userstorage.services.TokenService;
+import com.modsen.userstorageservice.models.dtos.UserDTO;
+import com.modsen.userstorageservice.services.AuthorizationService;
+import com.modsen.userstorageservice.services.TokenService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
-package com.modsen.userstorage.models.entities;
+package com.modsen.userstorageservice.models.entities;
 
-import com.modsen.userstorage.enums.Role;
+import com.modsen.userstorageservice.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

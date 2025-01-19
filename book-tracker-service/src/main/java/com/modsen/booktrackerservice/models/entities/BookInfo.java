@@ -1,6 +1,7 @@
 package com.modsen.booktrackerservice.models.entities;
 
 import com.modsen.booktrackerservice.enums.attributes.BookInfoStatus;
+import com.modsen.commonmodels.Constants;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,13 +37,14 @@ public class BookInfo {
     @Column
     private LocalDateTime returnDue;
 
-    public BookInfo(String isbn,
-                    BookInfoStatus bookInfoStatus,
-                    LocalDateTime borrowedAt,
-                    LocalDateTime returnDue) {
-        this.isbn = isbn;
-        this.bookInfoStatus = bookInfoStatus;
-        this.borrowedAt = borrowedAt;
-        this.returnDue = returnDue;
+    public void fillIn(Long userId) {
+        this.userId = userId;
+        if(userId == null) {
+            this.borrowedAt = this.returnDue = null;
+        } else {
+            LocalDateTime now = LocalDateTime.now();
+            this.borrowedAt = now;
+            this.returnDue = now.plusWeeks(Constants.WEEKS_AVAILABLE_FOR_BORROW);
+        }
     }
 }

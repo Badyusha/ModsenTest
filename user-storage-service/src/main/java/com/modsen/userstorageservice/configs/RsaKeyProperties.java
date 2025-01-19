@@ -1,4 +1,4 @@
-package com.modsen.userstorage.configs;
+package com.modsen.userstorageservice.configs;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

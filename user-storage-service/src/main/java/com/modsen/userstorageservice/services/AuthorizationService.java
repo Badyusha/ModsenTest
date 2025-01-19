@@ -1,14 +1,14 @@
-package com.modsen.userstorage.services;
+package com.modsen.userstorageservice.services;
 
 import com.modsen.commonmodels.exceptions.NoSuchUserException;
 import com.modsen.commonmodels.exceptions.ValidationException;
-import com.modsen.userstorage.enums.Role;
-import com.modsen.userstorage.mappers.UserDTOMapper;
-import com.modsen.userstorage.mappers.UserMapper;
-import com.modsen.userstorage.models.dtos.UserDTO;
-import com.modsen.userstorage.models.entities.User;
-import com.modsen.userstorage.repositories.UserRepository;
-import com.modsen.userstorage.utils.EncryptionUtil;
+import com.modsen.userstorageservice.enums.Role;
+import com.modsen.userstorageservice.mappers.UserDTOMapper;
+import com.modsen.userstorageservice.mappers.UserMapper;
+import com.modsen.userstorageservice.models.dtos.UserDTO;
+import com.modsen.userstorageservice.models.entities.User;
+import com.modsen.userstorageservice.repositories.UserRepository;
+import com.modsen.userstorageservice.utils.EncryptionUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

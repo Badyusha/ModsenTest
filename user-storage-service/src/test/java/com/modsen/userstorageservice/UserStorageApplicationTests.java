@@ -1,4 +1,4 @@
-package com.modsen.userstorage;
+package com.modsen.userstorageservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

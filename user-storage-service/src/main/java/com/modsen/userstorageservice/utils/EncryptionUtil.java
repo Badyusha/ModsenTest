@@ -1,4 +1,4 @@
-package com.modsen.userstorage.utils;
+package com.modsen.userstorageservice.utils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
