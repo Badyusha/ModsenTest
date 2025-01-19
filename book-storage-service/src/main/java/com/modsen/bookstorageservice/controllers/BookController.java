@@ -63,13 +63,9 @@ public class BookController {
 
     @Operation(summary = "Soft delete book with provided id")
     @PreAuthorize("hasRole('PUBLISHER')")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-        try {
-            bookService.deleteBookInfo(id);
-            return ResponseEntity.ok().build();
-        } catch (ObjectNotFoundException e) {
-            return ResponseEntity.notFound().build();
-        }
+    @DeleteMapping("/{isbn}")
+    public ResponseEntity<Void> deleteBook(@PathVariable String isbn) {
+        bookService.deleteBook(isbn);
+        return ResponseEntity.ok().build();
     }
 }

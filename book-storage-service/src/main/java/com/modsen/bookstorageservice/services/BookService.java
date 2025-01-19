@@ -70,12 +70,12 @@ public class BookService {
                 .orElseThrow(() -> new UnableToCastObjectToDTO("Book with provided ISBN does not exist"));
     }
 
-    public void deleteBookInfo(Long bookId) throws ObjectNotFoundException {
-        softDeleteBookInfo(bookId);
+    public void deleteBook(String isbn) {
+        sendDeletionRequestToBookTracker(isbn);
     }
 
-    private void softDeleteBookInfo(Long bookId) throws ObjectNotFoundException {
-        Optional<Book> bookOptional = bookRepository.findById(bookId);
+    public void softDeleteBook(String isbn) throws ObjectNotFoundException {
+        Optional<Book> bookOptional = bookRepository.findByIsbn(isbn);
         if (bookOptional.isEmpty()) {
             throw new ObjectNotFoundException("Book cannot be found. Book with provided id does not exist");
         }
@@ -83,9 +83,10 @@ public class BookService {
         Book book = bookOptional.get();
         book.setCreationStatus(CreationStatus.DELETED);
         bookRepository.save(book);
+    }
 
-        // delete by isbn in book-tracker-service
-         kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, book.getIsbn());
+    private void sendDeletionRequestToBookTracker(String isbn) {
+         kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, isbn);
     }
 
 }

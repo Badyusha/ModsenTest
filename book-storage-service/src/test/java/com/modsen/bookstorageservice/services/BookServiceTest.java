@@ -128,7 +128,7 @@ public class BookServiceTest {
     }
 
     @Test
-    void softDeleteBookInfo_shouldSetStatusToDeletedAndSendMessage() {
+    void softDeleteBook_shouldSetStatusToDeletedAndSendMessage() {
         when(bookRepository.findById(1L)).thenReturn(Optional.of(bookDTO));
 
         boolean result = bookService.softDeleteBookInfo(1L);

@@ -32,15 +32,25 @@ public class BookInfoController {
         return bookInfoService.getAvailableBooks();
     }
 
-    @Operation(summary = "Update book infos with provided id as a path param and BookInfoStatus")
-    @PutMapping("/{id}")
-    public BookInfoDTO updateBookStatus(@RequestHeader("Authorization") String token,
-                                        @PathVariable Long id,
-                                        @RequestParam BookInfoStatus bookInfoStatus) {
+    @Operation(summary = "Borrow book with provided isbn")
+    @PutMapping("/{isbn}/borrow")
+    public BookInfoDTO borrowBook(@RequestHeader("Authorization") String token,
+                                  @PathVariable String isbn) {
         try {
-            return bookInfoService.updateBookStatus(id, bookInfoStatus, token);
+            return bookInfoService.borrowBook(token, isbn);
         } catch (ObjectNotFoundException e) {
-            throw new RuntimeException("Unable to update book info. Book with provided id does not exist");
+            throw new RuntimeException("Unable to borrow book. Book with provided isbn does not exist");
+        }
+    }
+
+    @Operation(summary = "Return book with provided isbn")
+    @PutMapping("/{isbn}/return")
+    public BookInfoDTO returnBook(@RequestHeader("Authorization") String token,
+                                  @PathVariable String isbn) {
+        try {
+            return bookInfoService.returnBook(token, isbn);
+        } catch (ObjectNotFoundException e) {
+            throw new RuntimeException("Unable to return book. Book with provided isbn does not exist");
         }
     }
 
