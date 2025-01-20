@@ -12,7 +12,4 @@ import java.util.Optional;
 public interface BookInfoRepository extends JpaRepository<BookInfo, Long> {
     List<BookInfo> findByBookInfoStatus(BookInfoStatus bookInfoStatus);
     Optional<BookInfo> findByIsbn(String isbn);
-//    Optional<BookInfo> findByBookId(Long bookId);
-//    boolean existsByBookId(Long bookId);
-//    void deleteByBookId(Long bookId);
 }

@@ -88,5 +88,4 @@ public class BookService {
     private void sendDeletionRequestToBookTracker(String isbn) {
          kafkaTemplate.send(KafkaTopic.Constants.DELETION_TOPIC_VALUE, isbn);
     }
-
 }

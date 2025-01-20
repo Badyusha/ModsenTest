@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106e5c39-727e-4c2f-ab67-9b35d0e56f7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-storage-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/main/java/com/modsen/bookstorageservice/services/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-storage-service/src/test/java/com/modsen/bookstorageservice/services/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-storage-service/src/test/java/com/modsen/bookstorageservice/services/BookServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/controllers/BookInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/entities/BorrowHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/models/entities/BorrowHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BorrowHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BorrowHistoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/services/BookInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/kafka/KafkaTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-models/src/main/java/com/modsen/commonmodels/enums/kafka/KafkaTopic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/main/java/com/modsen/booktrackerservice/repositories/BookInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book-tracker-service/src/test/java/com/modsen/booktrackerservice/services/BookInfoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/book-tracker-service/src/test/java/com/modsen/booktrackerservice/services/BookInfoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +26,9 @@
       <list>
         <option value="Record" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,7 +56,16 @@
     "Application.BookStorageServiceApplication.executor": "Run",
     "Application.BookTrackerServiceApplication.executor": "Run",
     "Application.UserStorageServiceApplication.executor": "Run",
+    "JUnit.BookControllerTest.executor": "Run",
+    "JUnit.BookInfoControllerTest.executor": "Run",
+    "JUnit.BookInfoControllerTest.testCreateBookInfo.executor": "Run",
+    "JUnit.BookInfoRepositoryTest.executor": "Run",
+    "JUnit.BookInfoServiceTest.borrowBook_success.executor": "Run",
     "JUnit.BookInfoServiceTest.executor": "Run",
+    "JUnit.BookInfoServiceTest.returnBook_success.executor": "Run",
+    "JUnit.BookRepositoryTest.executor": "Run",
+    "JUnit.BookRepositoryTest.testFindByIsbn.executor": "Run",
+    "JUnit.BookServiceTest.executor": "Run",
     "Maven.book-storage-service [clean].executor": "Run",
     "Maven.book-storage-service [install].executor": "Run",
     "Maven.common-models [clean].executor": "Run",
@@ -75,7 +84,7 @@
     "git-widget-placeholder": "refactor",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/work/ModsenTest/book-storage-service/src/main/java/com/modsen/bookstorageservice/listeners",
+    "last_opened_file_path": "D:/work/ModsenTest/book-tracker-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,11 +100,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources" />
       <recent name="D:\work\ModsenTest\book-storage-service\src\main\java\com\modsen\bookstorageservice\listeners" />
       <recent name="D:\work\ModsenTest\user-storage\src\main\resources" />
       <recent name="D:\work\ModsenTest\user-storage\src\main\java\com\modsen\userstorage" />
       <recent name="D:\work\ModsenTest\user-storage" />
-      <recent name="D:\work\ModsenTest\book-tracker-service\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\ModsenTest\user-storage\src\main\resources\db" />
@@ -122,33 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BookTrackerServiceApplication">
-    <configuration name="BookStorageServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.BookStorageServiceApplication" />
-      <module name="book-storage-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.modsen.bookstorageservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookTrackerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.modsen.booktrackerservice.BookTrackerServiceApplication" />
-      <module name="book-tracker-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.modsen.booktrackerservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookInfoRepositoryTest">
     <configuration name="UserStorageServiceApplication" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -158,50 +141,108 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookInfoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="book-tracker-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.modsen.booktrackerservice.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.modsen.booktrackerservice.services" />
-      <option name="MAIN_CLASS_NAME" value="com.modsen.booktrackerservice.services.BookInfoServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BookControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="book-storage-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.modsen.bookstorageservice.services.*" />
+          <option name="PATTERN" value="com.modsen.bookstorageservice.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.services" />
-      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.services.BookServiceTest" />
-      <option name="METHOD_NAME" value="" />
+      <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.controllers.BookControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookInfoControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-tracker-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.booktrackerservice.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.booktrackerservice.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.booktrackerservice.controllers.BookInfoControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookInfoRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-tracker-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.booktrackerservice.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.booktrackerservice.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.booktrackerservice.repositories.BookInfoRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-storage-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.bookstorageservice.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.repositories.BookRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookRepositoryTest.testFindByIsbn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="book-storage-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.modsen.bookstorageservice.repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.modsen.bookstorageservice.repositories" />
+      <option name="MAIN_CLASS_NAME" value="com.modsen.bookstorageservice.repositories.BookRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindByIsbn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="user-storage-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="user-storage-service" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.UserStorageServiceApplication" />
-      <item itemvalue="Application.BookTrackerServiceApplication" />
-      <item itemvalue="Application.BookStorageServiceApplication" />
-      <item itemvalue="JUnit.BookInfoServiceTest" />
-      <item itemvalue="JUnit.BookServiceTest" />
+      <item itemvalue="JUnit.BookControllerTest" />
+      <item itemvalue="JUnit.BookInfoControllerTest" />
+      <item itemvalue="JUnit.BookInfoRepositoryTest" />
+      <item itemvalue="JUnit.BookRepositoryTest" />
+      <item itemvalue="JUnit.BookRepositoryTest.testFindByIsbn" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BookTrackerServiceApplication" />
-        <item itemvalue="Application.BookStorageServiceApplication" />
-        <item itemvalue="JUnit.BookServiceTest" />
-        <item itemvalue="JUnit.BookInfoServiceTest" />
+        <item itemvalue="JUnit.BookInfoRepositoryTest" />
+        <item itemvalue="JUnit.BookRepositoryTest" />
+        <item itemvalue="JUnit.BookRepositoryTest.testFindByIsbn" />
+        <item itemvalue="JUnit.BookControllerTest" />
+        <item itemvalue="JUnit.BookInfoControllerTest" />
       </list>
     </recent_temporary>
   </component>

@@ -1,6 +1,5 @@
 package com.modsen.booktrackerservice.controllers;
 
-import com.modsen.booktrackerservice.enums.attributes.BookInfoStatus;
 import com.modsen.booktrackerservice.models.dtos.BookInfoDTO;
 import com.modsen.booktrackerservice.services.BookInfoService;
 import com.modsen.commonmodels.exceptions.ObjectNotFoundException;
